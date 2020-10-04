@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:src="@drawable/backgroundcrop"
+            app:layout_constraintBottom_toTopOf="@id/camera"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="20dp"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_magnifying_glass"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="20dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/camera"
+            android:layout_width="300dp"
+            android:layout_height="180dp"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintTop_toBottomOf="@id/img1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/search">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/nikon">
+
+                <TextView
+                    android:id="@+id/txtCam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Camera"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="20dp"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:layout_constraintVertical_bias="1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/newProduct"
+                    app:layout_constraintLeft_toLeftOf="parent"/>
+
+                <TextView
+                    android:id="@+id/newProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Product from Nikon"
+                    android:textColor="#ffffff"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/txtCam"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/txtCam"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/camera"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/search_product">
+
+                <TextView
+                    android:id="@+id/txtBrowse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BROWSE BY"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:layout_constraintHorizontal_bias="0.7"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/btnBrand"/>
+
+                <Button
+                    android:id="@+id/btnBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="BRAND"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="5dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:background="#ff0000"
+                    app:layout_constraintHorizontal_bias="0.75"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtBrowse"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="5dp"
+            android:layout_height="25dp"
+            android:background="#6E5B5B"
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toBottomOf="@id/search"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Latest Arrivals"
+            android:textColor="#6E5B5B"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toTopOf="@id/line1"
+            app:layout_constraintLeft_toLeftOf="@id/line1"
+            app:layout_constraintBottom_toBottomOf="@id/line1"/>
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="20dp"
+            android:background="#ff0000"
+            android:text="view all"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@id/line1"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <fragment
+            android:id="@+id/fragment"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/navigation"
+            app:layout_constraintTop_toBottomOf="@id/line1"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/fragment"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/search_product">
+
+                <TextView
+                    android:id="@+id/txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CAN'T "
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/txt2"/>
+
+                <TextView
+                    android:id="@+id/txt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FIND "
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    app:layout_constraintTop_toTopOf="@id/txt1"
+                    app:layout_constraintLeft_toRightOf="@id/txt1"
+                    app:layout_constraintBottom_toBottomOf="@id/txt1"/>
+
+                <TextView
+                    android:id="@+id/txt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WHAT YOU"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    app:layout_constraintTop_toTopOf="@id/txt1"
+                    app:layout_constraintLeft_toRightOf="@id/txt4"
+                    app:layout_constraintBottom_toBottomOf="@id/txt1"/>
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOOKING FOR?"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    app:layout_constraintTop_toBottomOf="@id/txt1"
+                    app:layout_constraintLeft_toLeftOf="@id/txt1"
+                    app:layout_constraintBottom_toTopOf="@id/txt3"/>
+
+                <TextView
+                    android:id="@+id/txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SEARCH BY"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    app:layout_constraintTop_toBottomOf="@id/txt2"
+                    app:layout_constraintLeft_toLeftOf="@id/txt1"
+                    app:layout_constraintBottom_toTopOf="@id/btnUpload"/>
+
+                <Button
+                    android:id="@+id/btnUpload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="UPLOAD PICTURE"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:background="#ff0000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/txt1"
+                    app:layout_constraintTop_toBottomOf="@id/txt3"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="5dp"
+            android:layout_height="25dp"
+            android:background="#6E5B5B"
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toBottomOf="@id/upload"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular Products"
+            android:textColor="#6E5B5B"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toTopOf="@id/line2"
+            app:layout_constraintLeft_toLeftOf="@id/line2"
+            app:layout_constraintBottom_toBottomOf="@id/line2"/>
+
+        <fragment
+            android:id="@+id/fragment2"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/navigation2"
+            app:layout_constraintTop_toBottomOf="@id/line2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/line3"/>
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="5dp"
+            android:layout_height="25dp"
+            android:background="#6E5B5B"
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toBottomOf="@id/fragment2"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular Products"
+            android:textColor="#6E5B5B"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toTopOf="@id/line3"
+            app:layout_constraintLeft_toLeftOf="@id/line3"
+            app:layout_constraintBottom_toBottomOf="@id/line3"/>
+
+        <fragment
+            android:id="@+id/fragment3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/navigation3"
+            app:layout_constraintTop_toBottomOf="@id/line3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
